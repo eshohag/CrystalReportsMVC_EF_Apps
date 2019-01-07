@@ -416,7 +416,6 @@ namespace CrystalReportsMVC_EF.Controllers
                     _signInManager = null;
                 }
             }
-
             base.Dispose(disposing);
         }
 
