@@ -9,7 +9,7 @@ namespace CrystalReportsMVC_EF.Controllers
     public class ExportToPdfController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-        // GET: ExportToPdf
+        // GET: ExportToPdf/Export
         public ActionResult Export()
         {
             ReportDocument aReportDocument = new ReportDocument();
@@ -30,6 +30,7 @@ namespace CrystalReportsMVC_EF.Controllers
             return File(aStream, "application/pdf", "ProductList.pdf");
         }
 
+        // GET: ExportToPdf/ExportToGroupBy
         public ActionResult ExportToGroupBy()
         {
             ReportDocument aReportDocument = new ReportDocument();
