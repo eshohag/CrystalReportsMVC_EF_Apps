@@ -183,6 +183,17 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="CrystalReports\ProductGroupingCrystalReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductGroupingCrystalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\ProductGroupingDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductGroupingDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="CrystalReports\ProductsCrystalReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -224,6 +235,17 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="CrystalReports\ProductsDataSet.xsc">
       <DependentUpon>ProductsDataSet.xsd</DependentUpon>
+    </Content>
+    <Content Include="CrystalReports\ProductGroupingDataSet.xsc">
+      <DependentUpon>ProductGroupingDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="CrystalReports\ProductGroupingDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProductGroupingDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="CrystalReports\ProductGroupingDataSet.xss">
+      <DependentUpon>ProductGroupingDataSet.xsd</DependentUpon>
     </Content>
     <None Include="CrystalReports\ProductsDataSet.xsd">
       <SubType>Designer</SubType>
@@ -302,6 +324,10 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CrystalReports\ProductGroupingCrystalReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ProductGroupingCrystalReport.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="CrystalReports\ProductsCrystalReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ProductsCrystalReport.cs</LastGenOutput>
