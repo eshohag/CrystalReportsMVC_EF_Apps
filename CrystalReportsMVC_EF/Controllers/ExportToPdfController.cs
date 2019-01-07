@@ -51,5 +51,18 @@ namespace CrystalReportsMVC_EF.Controllers
             aStream.Seek(0, SeekOrigin.Begin);
             return File(aStream, "application/pdf", "ProductListGroupBy.pdf");
         }
+
+        public ActionResult Employee()
+        {
+            ReportDocument aReportDocument = new ReportDocument();
+            aReportDocument.Load(Path.Combine(Server.MapPath("~/CrystalReports/EmployeeCrystalReport.rpt")));
+            aReportDocument.SetDataSource(db.Employees.ToList());
+            Response.Buffer = false;
+            Response.ClearContent();
+            Response.ClearHeaders();
+            Stream aStream = aReportDocument.ExportToStream(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat);
+            aStream.Seek(0, SeekOrigin.Begin);
+            return File(aStream, "application/pdf", "Employees.pdf");
+        }
     }
 }

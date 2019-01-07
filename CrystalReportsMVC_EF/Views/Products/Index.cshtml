@@ -27,7 +27,8 @@
         <th></th>
     </tr>
 
-    @foreach (var item in Model) {
+    @foreach (var item in Model)
+    {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
@@ -42,15 +43,15 @@
                 @Html.DisplayFor(modelItem => item.Price)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
             </td>
         </tr>
     }
 </table>
-<hr/>
-<a class="btn btn-danger" href="@Url.Action("Export","ExportToPdf")">Export to Download Pdf</a>
-<br/>
-<br/>
-<a class="btn btn-success" href="@Url.Action("ExportToGroupBy","ExportToPdf")">Export to Group By to Download Pdf</a>
+<hr />
+<a class="btn btn-danger" href="@Url.Action("Export","ExportToPdf")">Product Export to Download Pdf</a>
+<br />
+<br />
+<a class="btn btn-success" href="@Url.Action("ExportToGroupBy","ExportToPdf")">Export to Group By to Download Pdf</a> 
