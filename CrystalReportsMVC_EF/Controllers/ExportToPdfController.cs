@@ -48,7 +48,7 @@ namespace CrystalReportsMVC_EF.Controllers
             Response.ClearHeaders();
             Stream aStream = aReportDocument.ExportToStream(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat);
             aStream.Seek(0, SeekOrigin.Begin);
-            return File(aStream, "application/pdf", "ProductList.pdf");
+            return File(aStream, "application/pdf", "ProductListGroupBy.pdf");
         }
     }
 }
